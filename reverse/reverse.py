@@ -40,8 +40,13 @@ class LinkedList:
 
     def reverse_list(self, node, prev):
         while node is not None:
+            # Store the node's next node
             nextNode = node.next_node
+            # Set the node's next node to be its previous node (first one's prev is None)
             node.next_node = prev
+            # Sets the current node to be prev
             prev = node
+            # Moves on to the next node until hitting the final node's none and break the while loop
             node = nextNode
+        # Sets the final to be the last node(prev)
         self.head = prev
